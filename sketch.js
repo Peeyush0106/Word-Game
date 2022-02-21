@@ -38,7 +38,10 @@ var letters = [
     ]
 ];
 
-window.onload = createAlphaTable;
+window.onload = function () {
+    createAlphaTable();
+    document.body.style.zoom = 0.85 * window.innerWidth / 1440;
+};
 
 setInterval(function () {
     if (!end) {

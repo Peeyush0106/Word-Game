@@ -1,5 +1,5 @@
-html{
-    font-family: comic sans ms
+html {
+    font-family: comic sans ms;
 }
 
 #container {
@@ -22,7 +22,7 @@ html{
     font-weight: bold;
 }
 
-.letterTable{
+.letterTable {
     font-size: 200%;
 }
 
