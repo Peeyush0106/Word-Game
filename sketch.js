@@ -80,9 +80,6 @@ function createAlphaTable() {
                         currentNo++;
                     }
                 }
-                else {
-                    endGame();
-                }
                 document.getElementById("word-box-" + currentNo).focus();
             }
             document.getElementById("letters-" + (i + 1)).appendChild(th);
@@ -105,6 +102,10 @@ document.getElementById("submit-btn").addEventListener("click", (e) => {
             alert("Word does not exist!");
         }
     }
+    else {
+        endGame();
+        alert("The word is: " + ansWord);
+    }
 });
 
 window.onkeydown = (e) => {
@@ -114,13 +115,18 @@ window.onkeydown = (e) => {
             alert("Insufficient letters!");
         }
         if (currentNo !== 30) {
-            if (returnData === true) {
+            if (returnData == true) {
                 giveWordHints();
                 enableNextWord();
             }
-            else {
+            else if(returnData == false){
                 alert("Word does not exist!");
             }
+        }
+        else {
+            giveWordHints();
+            endGame();
+            alert("The word is: " + ansWord);
         }
     }
     if (e.keyCode === 8) {
@@ -160,9 +166,6 @@ function createTable() {
                             document.getElementById("word-box-" + nextBtnNo).focus();
                             currentNo++;
                         }
-                    }
-                    else {
-                        endGame();
                     }
                 }
             }
