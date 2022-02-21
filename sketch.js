@@ -43,6 +43,10 @@ window.onload = function () {
     document.body.style.zoom = 0.85 * window.innerWidth / 1440;
 };
 
+window.onresize = function () {
+    document.body.style.zoom = 0.85 * window.innerWidth / 1440;
+}
+
 setInterval(function () {
     if (!end) {
         document.getElementById("word-box-" + currentNo).focus();
